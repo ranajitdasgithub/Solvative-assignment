@@ -1,0 +1,19 @@
+#container{
+    display: flex;
+    justify-content: space-between;
+}
+.hamburger{
+    font-size: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hamburger>div{
+    cursor: pointer;
+}
+span{
+    margin-left: 1rem;
+}
+.history{
+    margin-right: 3rem;
+}

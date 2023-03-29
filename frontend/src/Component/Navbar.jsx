@@ -1,10 +1,25 @@
-import React from 'react'
-import "../Style/Navbar.css"
+import React, { useState } from "react";
+import "../Style/Navbar.css";
+import { GiFlashGrenade, GiHamburgerMenu } from "react-icons/gi";
+import History from "./History";
 
 const Navbar = () => {
-  return (
-    <div>Navbar</div>
-  )
-}
+  const [auth, setAuth] = useState(GiFlashGrenade);
 
-export default Navbar
+  console.log(auth);
+  return (
+    <div id="container">
+      <div className="hamburger">
+        <div onClick={() => setAuth(!auth)}>
+          <GiHamburgerMenu />
+        </div>
+        <span>Standard</span>
+      </div>
+      <div>
+        <History/>
+      </div>
+    </div>
+  );
+};
+
+export default Navbar;
