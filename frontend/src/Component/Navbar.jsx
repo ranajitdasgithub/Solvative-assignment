@@ -4,9 +4,7 @@ import { GiFlashGrenade, GiHamburgerMenu } from "react-icons/gi";
 import History from "./History";
 
 const Navbar = () => {
-  const [auth, setAuth] = useState(GiFlashGrenade);
-
-  console.log(auth);
+  const [auth, setAuth] = useState(false);
   return (
     <div id="container">
       <div className="hamburger">

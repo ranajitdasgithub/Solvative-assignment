@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import Navbar from './Navbar'
 import "../Style/Calculator.css"
 import { RiDivideFill } from "react-icons/ri";
@@ -12,6 +12,8 @@ import { BsBackspace } from "react-icons/bs";
 const Calculator = () => {
     const [result,setResult]=useState("0")
     const [data,setData]=useState("")
+    const [history,setHistory]=useState([])
+
     const handleNumber=(eachNum)=>{
         setData((prev)=>prev+eachNum)
     }
@@ -19,10 +21,11 @@ const Calculator = () => {
         setData((prev)=>prev+eachOpe)
     }
     const handleEqual=()=>{
-      const inputData=data
+      const inputData=data.trim()
       try{
         const result=eval(inputData)
         setResult(result.toString())
+        setHistory((prev)=>[...prev,{inputData,result}])
       }
       catch(err){
         setResult("Error")
@@ -49,6 +52,9 @@ const Calculator = () => {
         newData.pop()
         setData(newData.join(""))
     }
+    useEffect(()=>{
+        localStorage.setItem("data_history",JSON.stringify(history))
+    },[history])
   return (
     <div>
         <Navbar/>
