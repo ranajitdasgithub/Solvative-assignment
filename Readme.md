@@ -1,4 +1,4 @@
-  ## Live view- 
+  ## Live view- https://solvative-calculator.netlify.app/
 
   ## Step to start the live server
 
