@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+import "../Style/History.css";
 const History = () => {
   const [history, setHistory] = useState([]);
   useEffect(() => {
@@ -10,7 +11,7 @@ const History = () => {
   }, []);
   return (
     <div>
-      <div>History</div>
+      <h2>History</h2>
       <div>
         {history.length > 0 &&
           history.map((ele) => {

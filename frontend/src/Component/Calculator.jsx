@@ -56,7 +56,7 @@ const Calculator = () => {
         localStorage.setItem("data_history",JSON.stringify(history))
     },[history])
   return (
-    <div>
+    <div id="calcont">
         <Navbar/>
         <div className='main'>
           <div className='result'>{result}</div>

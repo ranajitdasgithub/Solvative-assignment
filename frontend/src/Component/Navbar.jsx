@@ -13,8 +13,8 @@ const Navbar = () => {
         </div>
         <span>Standard</span>
       </div>
-      <div>
-        <History/>
+      <div style={{display:auth?"block":"none"}}>
+        <History />
       </div>
     </div>
   );
